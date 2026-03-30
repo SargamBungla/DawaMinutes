@@ -1,0 +1,139 @@
+/* Page Layout */
+.admin-login-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.admin-login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 30px 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.admin-login-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.admin-login-sub {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* Portal Row */
+.admin-portal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-portal-label {
+  font-size: 14px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.admin-portal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-portal-btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #e2e8f0;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.admin-portal-btn:hover {
+  background: #cbd5f5;
+}
+
+.admin-portal-btn.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* Form */
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.admin-field-label {
+  font-size: 13px;
+  color: #334155;
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+/* Inputs */
+.admin-input {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Error */
+.admin-login-error {
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* Button */
+.admin-btn-primary {
+  margin-top: 18px;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.admin-btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.admin-btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .admin-login-card {
+    padding: 24px 18px;
+  }
+
+  .admin-login-title {
+    font-size: 22px;
+  }
+}
