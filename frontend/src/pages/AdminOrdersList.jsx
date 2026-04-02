@@ -88,7 +88,7 @@ export default function AdminOrdersList() {
                       padding: 4,
                     }}
                     onError={(e) => {
-e.target.src =\n                        "/medicines/Categories/health care.png";
+                      e.target.src = "/medicines/Categories/health care.png";
                     }}
                   />
                 ) : (
@@ -128,7 +128,7 @@ e.target.src =\n                        "/medicines/Categories/health care.png";
                           }}
                           onError={(e) => {
                             e.target.src =
-                              "/src/assets/medicines/Categories/health care.png";
+                              "/medicines/Categories/health care.png";
                           }}
                         />
                       ) : (
