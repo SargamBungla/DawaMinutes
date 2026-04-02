@@ -1,4 +1,3 @@
-
 import express from "express"
 import dotenv from "dotenv"
 dotenv.config()
@@ -13,7 +12,12 @@ const app = express()
 const port = process.env.PORT || 5000
 
 app.use(cors({
-  origin: ["http://localhost:5173", "http://localhost:5174"],
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://dawa-minutes.vercel.app',
+    'https://dawa-minutes-pscctl3zm-sargam-bungla.vercel.app'
+  ],
   credentials: true
 }))
 
