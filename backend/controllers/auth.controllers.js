@@ -47,12 +47,12 @@ export const signUp = async(req, res) => {
 
           const token = genToken(result.insertId)
 
-          res.cookie("token", token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax",
-            maxAge: 7 * 24 * 60 * 60 * 1000
-          })
+         res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,        // ✅ must be true for HTTPS (production)
+  sameSite: "none",    // ✅ must be "none" for cross-domain cookies
+  maxAge: 7 * 24 * 60 * 60 * 1000
+})
 
           return res.status(201).json({
             message: "User registered successfully!",
@@ -118,7 +118,11 @@ export const signIn = async(req,res) => {
 
 export const signOut = async (req,res) =>{
   try{
-    res.clearCookie("token")
+    res.clearCookie("token", {
+  httpOnly: true,
+  secure: true,
+  sameSite: "none"
+})
 return res.status(200).json({message:"log out successfully"})
   } catch(error){
     return res.status(500).json({ message: `Sign in error: ${error}` })
