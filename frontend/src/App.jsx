@@ -16,7 +16,8 @@ import AdminDashboard from "./components/AdminDashboard";
 import Orders from "./pages/Orders";
 import Cart from "./pages/Cart";
 
-export const serverUrl = "http://localhost:8000";
+export const serverUrl =
+  import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 function App() {
   const { user, adminSession } = useAuth();
