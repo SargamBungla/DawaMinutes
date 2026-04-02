@@ -7,6 +7,8 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import { MedicineCatalogProvider } from "./context/MedicineCatalogContext.jsx";
 import { CartProvider } from "./context/CartContext";
 
+axios.defaults.withCredentials = true;
+
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <AuthProvider>
