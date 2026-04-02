@@ -16,8 +16,6 @@ import AdminDashboard from "./components/AdminDashboard";
 import Orders from "./pages/Orders";
 import Cart from "./pages/Cart";
 
-axios.defaults.withCredentials = true;
-
 export const serverUrl =
   import.meta.env.VITE_API_URL || "http://localhost:8000";
 

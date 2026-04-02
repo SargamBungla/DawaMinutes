@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { MedicineCatalogProvider } from "./context/MedicineCatalogContext.jsx";
 import { CartProvider } from "./context/CartContext";
+import axios from "axios"; // ✅ Add this line
 
 axios.defaults.withCredentials = true;
 
