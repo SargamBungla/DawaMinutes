@@ -2,7 +2,7 @@ export const categories = [
   {
     id: 1,
     name: "Ayurvedic Care",
-image: "/medicines/Categories/Ayurvedic care.png",
+image: "/medicines/Categories/Ayurvedic Care.png",
     color: "#e8f5e9",
     accent: "#43a047",
   },
