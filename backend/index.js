@@ -12,12 +12,16 @@ const app = express()
 const port = process.env.PORT || 5000
 
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'http://localhost:3000',
-    'https://dawa-minutes.vercel.app',
-    'https://dawa-minutes-pscctl3zm-sargam-bungla.vercel.app'
-  ],
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true);
+    if (
+      origin.includes('vercel.app') ||
+      origin.includes('localhost')
+    ) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true
 }))
 
