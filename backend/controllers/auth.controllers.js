@@ -49,8 +49,8 @@ export const signUp = async(req, res) => {
 
          res.cookie("token", token, {
   httpOnly: true,
-  secure: true,        // ✅ must be true for HTTPS (production)
-  sameSite: "none",    // ✅ must be "none" for cross-domain cookies
+  secure: true,        
+  sameSite: "none",  
   maxAge: 7 * 24 * 60 * 60 * 1000
 })
 
@@ -99,8 +99,8 @@ export const signIn = async(req,res) => {
 
        res.cookie("token", token, {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
         maxAge: 7 * 24 * 60 * 60 * 1000
       })
       const { password: pwd, ...safeUser } = user
