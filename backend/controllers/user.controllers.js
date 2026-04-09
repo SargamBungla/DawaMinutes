@@ -2,26 +2,15 @@ import db from "../config/db.js"
 
 export const getCurrentUser = async (req, res) => {
   try {
-    // isAuth middleware ne req.userId set kiya tha
     const userId = req.userId
+    const [result] = await db.query("SELECT * FROM users WHERE user_id = ?", [userId])
 
-    // Database se user dhundho
-    const sql = "SELECT user_id, name, email, phone, address, role FROM users WHERE user_id = ?"
+    if(result.length === 0) return res.status(400).json({ message: "User not found." })
 
-    db.query(sql, [userId], (err, result) => {
-      if(err){
-        return res.status(500).json({message: "Database error"})
-      }
-
-      if(result.length === 0){
-        return res.status(404).json({message: "User not found"})
-      }
-
-      // Password nahi bhej rahe — security ke liye
-      return res.status(200).json(result[0])
-    })
+    const { password, ...safeUser } = result[0]
+    return res.status(200).json(safeUser)
 
   } catch(error) {
-    return res.status(500).json({message: "Get user error"})
+    return res.status(500).json({ message: `Get user error: ${error}` })
   }
 }
